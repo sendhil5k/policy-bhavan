@@ -8,13 +8,13 @@ ul {
 li {
   display: inline-block;
 }
-li a {
+footer li a {
   text-align: center;
   padding: 0 16px;
   text-decoration: none;
 }
 
-li a:hover {
+footer li a:hover {
   color:bisque;
 }
 .right {

@@ -1,6 +1,17 @@
 * {
     box-sizing: border-box;
   }
+  input:focus-visible {
+    outline: gray auto 1px;
+}
+  a:link{
+    color:#0868ba; 
+    text-decoration: none;
+  }
+  a:hover{
+    color:#0868ba;
+    text-decoration: underline;
+  }
   h1,h2,h3,h4,h5,h6,p{
     margin:5px 0;
     padding:0;
@@ -14,8 +25,14 @@
     color:#696b70; 
   }
   .dblock, .dblock li{display: block;}
+  .dblock a:link{font-size: 14px;}
+  .dblock a:hover{text-decoration: underline;}
   .column1 {
     width: 100%;
+  }
+  .ins1-col{
+    width:70%; 
+    display:block;
   }
   .ins2-col{
     width:50%; 
@@ -36,14 +53,14 @@
   }
   .section{
     background: #fff;
-    border: 1px solid #e7e6e6;
+    border: 1px solid #dadce0;
     border-radius: 10px;
     overflow: hidden;
     padding:15px;
     margin-bottom:20px;
 }
 .section-title{
-    border-bottom: 1px solid #e7e6e6;
+    border-bottom: 1px solid #dadce0;
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 10px;
@@ -53,6 +70,8 @@
 .section-title div:nth-child(1) {
   width: 97%;
 }
+.section-title:hover{
+color:#f9c10b}
 .label{
     font-size: 14px;
    
@@ -69,32 +88,6 @@
     margin:5px 0;
     width:90%;
     }
-  .notification-top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 40px;
-    line-height: 40px;
-    width: 100%;
-    background: #1ABC9C;
-    text-align: center;
-    color: #FFFFFF;
-    font-family: sans-serif;
-    font-weight: lighter;
-    font-size: 14px;
-  }
-  .notification-top-bar p {
-    padding: 0;
-    margin: 0;
-  }
-  .notification-top-bar p a {
-    padding: 5px 10px;
-    border-radius: 3px;
-    background: #FFF;
-    color: #1ABC9C;
-    font-weight: bold;
-    text-decoration: none;
-  }
   .card-link .ins-col{
     margin:5px 0;
   }
@@ -104,8 +97,26 @@
   .card-link .ins-col a:hover{
     text-decoration: underline;
   } 
-
-
+  .arrow {
+    border: solid #2565C7;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+      }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+.btnpanel{
+  text-align: center;
+    margin-right: 4%;
+    margin-top: 20px;
+}
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column, .column1 {
