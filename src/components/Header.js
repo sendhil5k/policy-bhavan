@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css"; // Import the CSS file
+import {Link} from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -18,15 +19,15 @@ const Header = () => {
         <ul className="navbar-nav ms-auto">
           
           <li className="nav-item">
-            <a className="nav-link click-scroll" href="#section_1">Home</a>
+            <Link to="/" className="nav-link click-scroll">Home</Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link click-scroll" href="#section_2">About</a>
+           <Link to="/about" className="nav-link click-scroll">About</Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link click-scroll" href="#section_3">Contact</a>
+          <Link to="/contact" className="nav-link click-scroll">Contact</Link>
           </li>
         </ul>
       </div>
