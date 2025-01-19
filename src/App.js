@@ -1,7 +1,7 @@
 import React from 'react';
-import TwoColumnLayout from './component/TwoColumnLayout';
-import Footer from './component/Footer';
-import Header from './component/Header';
+import TwoColumnLayout from './components/TwoColumnLayout';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 const App = () => {
   return (

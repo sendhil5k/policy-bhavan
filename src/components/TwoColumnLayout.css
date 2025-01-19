@@ -4,12 +4,12 @@
   input:focus-visible {
     outline: gray auto 1px;
 }
-  a:link{
-    color:#0868ba; 
+  a:link, a:-webkit-any-link{
+    color:#06a; 
     text-decoration: none;
   }
   a:hover{
-    color:#0868ba;
+    color:#06a;
     text-decoration: underline;
   }
   h1,h2,h3,h4,h5,h6,p{
@@ -71,7 +71,7 @@
   width: 97%;
 }
 .section-title:hover{
-color:#f9c10b}
+color:#06A}
 .label{
     font-size: 14px;
    
@@ -88,17 +88,19 @@ color:#f9c10b}
     margin:5px 0;
     width:90%;
     }
+    
   .card-link .ins-col{
     margin:5px 0;
   }
-  .card-link .ins-col a{
+  .card-link .ins-col a:link{
+    color:#06a;
     text-decoration: none;
   }
   .card-link .ins-col a:hover{
     text-decoration: underline;
   } 
   .arrow {
-    border: solid #2565C7;
+    border: solid #06a;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
