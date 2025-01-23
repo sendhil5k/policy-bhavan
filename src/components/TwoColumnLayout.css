@@ -4,7 +4,7 @@
   input:focus-visible {
     outline: gray auto 1px;
 }
-  a:link, a:-webkit-any-link{
+  a:link{
     color:#06a; 
     text-decoration: none;
   }
@@ -44,7 +44,9 @@
     display: inline-block;
     vertical-align: top;
   }
-  
+  .mid-container{
+    margin-bottom: 5%;
+  }
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -86,7 +88,7 @@ color:#06A}
     transition: 0.2s;
     padding: 4px 4px 4px 8px;
     margin:5px 0;
-    width:90%;
+    width:95%;
     }
     
   .card-link .ins-col{
@@ -120,11 +122,17 @@ color:#06A}
     margin-top: 20px;
 }
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px){
+    .wrapper{
+      display: block;
+    }
     .column, .column1 {
       width: 100%;
     }
-    .ins-col{
+    .ins-col, .ins1-col, .ins2-col,.field, .ins3-col{
         width:100%; 
+      }
+      .mid-container{
+        margin-bottom: 20%;
       }
   }

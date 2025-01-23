@@ -29,7 +29,7 @@ const MainPage = () => {
       </div>
       {openCards[0] && (<div>
         <div className="ins2-col">
-           <Link to="/newpolicy" className="nav-link click-scroll">New Account</Link>
+           <Link to="/newpolicy" >New Account</Link>
         </div>
         <div className="ins2-col">
           <a href="#">Add Policy</a>
@@ -73,7 +73,7 @@ const MainPage = () => {
             Account:
           </label>
           <br />
-          <input className="field" type="text" id="fname" name="fname" /><br /><br />
+          <input className="field" type="text" id="fname" name="fname" /><br />
           <ul className="dblock">
           <li><a href="#">12345678</a></li>
             <li><a href="#">87634521</a></li>
@@ -85,7 +85,7 @@ const MainPage = () => {
             Transaction:
           </label>
           <br />
-          <input className="field" type="text" id="fname" name="fname" /><br /><br />
+          <input className="field" type="text" id="fname" name="fname" /><br />
           <ul className="dblock">
           <li><a href="#">12345678</a></li>
             <li><a href="#">87634521</a></li>
