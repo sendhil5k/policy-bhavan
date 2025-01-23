@@ -5,9 +5,7 @@ const TwoColumnLayout = () => {
   
 
   return (
-    <div>
-      
-    
+    <div className="mid-container">
       <div className="wrapper">
         <div className="column">
           <h4>Contacts</h4>
