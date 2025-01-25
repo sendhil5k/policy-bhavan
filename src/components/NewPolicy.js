@@ -1,29 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import SubmitButton from './SubmitButton';
+import Accordion from "./accordion";
+import TabContent from './TabContent';
 import "./Header.css"; // Import the CSS file
 
 const NewPolicy = () => {
-  // State to track open status of each card
-    const [openCards, setOpenCards] = useState([true, true]);
-  
-    // Function to toggle a card
-    const toggleCard = (index) => {
-      setOpenCards((prev) =>
-        prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
-      );
-    };
-  
+
     // submit button action 
     const handleSubmit = () => {
       alert('Form submitted!');
     };
   return (
-    <><div className="section">
-    <div className="section-title" onClick={() => toggleCard(0)}>
-      <div>Policy Holder Details</div>
-      <div>{openCards[0] ? (<i className="arrow down"></i>) : (<i className="arrow up"></i>)}</div>
-    </div>
-    {openCards[0] && (<div>
+    <>
+    <Accordion title="Policy Holder Details">
+    <div>
       <div className="ins2-col">
         <label className="label" htmlFor="fname">
           First Name:
@@ -90,15 +80,11 @@ const NewPolicy = () => {
       <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
         <SubmitButton text="Submit" onClick={handleSubmit} />
       </form>
-    </div>)}
-  </div>
-
-  <div className="section">
-    <div className="section-title" onClick={() => toggleCard(1)}>
-      <div>Current Insurance</div>
-      <div>{openCards[1] ? (<i className="arrow down"></i>) : (<i className="arrow up"></i>)}</div>
     </div>
-    {openCards[1] && (<div>
+    </Accordion>
+    
+    <Accordion title="Current Insurance">
+    <div>
       <div className="ins1-col">
         <label className="label" htmlFor="fname">
         CurrentCarrier:
@@ -124,8 +110,12 @@ const NewPolicy = () => {
       <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
         <SubmitButton text="Submit" onClick={handleSubmit} />
       </form>
-    </div>)}
-  </div>
+    </div>
+    </Accordion>
+
+    <Accordion title="Drivers">
+        <div><TabContent></TabContent></div>
+    </Accordion>
 </>
   )
 }

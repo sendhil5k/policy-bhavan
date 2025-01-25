@@ -1,0 +1,29 @@
+.accordion {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    overflow: hidden;
+    padding:15px;
+    margin-bottom:20px;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  
