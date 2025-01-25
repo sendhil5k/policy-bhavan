@@ -1,38 +1,24 @@
-
 import React, {useState} from 'react'
 import SubmitButton from './SubmitButton';
+import Accordion from "./accordion";
 import { NAME_AND_ADDRESS } from '../constants';
 import { Link } from 'react-router-dom';
 import "./Header.css"; // Import the CSS file
 
 const MainPage = () => {
-  // State to track open status of each card
-  const [openCards, setOpenCards] = useState([true, true, true]);
-
-  // Function to toggle a card
-  const toggleCard = (index) => {
-    setOpenCards((prev) =>
-      prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
-    );
-  };
-
   // submit button action 
   const handleSubmit = () => {
     alert('Form submitted!');
   };
   return (
     <>
-    <div className="section card-link">
-      <div className="section-title" onClick={() => toggleCard(0)}>
-        <div>Links</div>
-        <div>{openCards[0] ? (<i className="arrow down"></i>) : (<i className="arrow up"></i>)}</div>
-      </div>
-      {openCards[0] && (<div>
+    <Accordion title="Link">
+    <div>
         <div className="ins2-col">
-           <Link to="/newpolicy" >New Account</Link>
+        <a href="#">New Account</a>
         </div>
         <div className="ins2-col">
-          <a href="#">Add Policy</a>
+        <Link to="/newpolicy" >Add Policy</Link>
         </div>
         <div className="ins2-col">
           <a href="#">Policy change</a>
@@ -46,15 +32,11 @@ const MainPage = () => {
         <div className="ins2-col">
           <a href="#">View Voided transactions</a>
         </div>
-      </div>)}
-    </div>
-
-    <div className="section">
-      <div id="securitySectionTitle" className="section-title" onClick={() => toggleCard(1)}>
-        <div>Search</div>
-        <div>{openCards[1] ? (<i className="arrow down"></i>) : (<i className="arrow up"></i>)}</div>
       </div>
-      {openCards[1] && (<div>
+    </Accordion>
+
+    <Accordion title="Search" isOpenDefault>
+    <div>
         <div className="ins3-col">
           <label className="label" htmlFor="fname">
             Policy:
@@ -96,15 +78,11 @@ const MainPage = () => {
         <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
           <SubmitButton text="Submit" onClick={handleSubmit} />
         </form>
-      </div>)}
-    </div>
-
-    <div className="section">
-      <div className="section-title" onClick={() => toggleCard(2)}>
-        <div>{NAME_AND_ADDRESS}</div>
-        <div>{openCards[2] ? (<i className="arrow down"></i>) : (<i className="arrow up"></i>)}</div>
       </div>
-      {openCards[2] && (<div>
+    </Accordion>
+      
+      <Accordion title={NAME_AND_ADDRESS} isOpenDefault>
+      <div>
         <div className="ins2-col">
           <label className="label" htmlFor="fname">
             First Name:
@@ -171,8 +149,14 @@ const MainPage = () => {
         <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
           <SubmitButton text="Submit" onClick={handleSubmit} />
         </form>
-      </div>)}
-    </div>
+      </div>
+      </Accordion>
+      
+      <Accordion title="Accordion Title 3">
+        <p>This is the content for accordion 3.</p>
+      </Accordion>
+
+      
   </>
   )
 }
