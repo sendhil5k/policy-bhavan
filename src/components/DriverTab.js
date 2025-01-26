@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import './TabContent.css';
+import { useState } from "react";
+import './DriverTab.css';
 
-const DynamicTabs = () => {
+const DriverTab = () => {
   const [tabs, setTabs] = useState([
     { id: 1, title: "Driver 1", content: {} },
   ]);
@@ -162,22 +162,7 @@ const DynamicTabs = () => {
                 }
               />
             </div>
-            {/* <div className="ins2-col">
-              <label className="label" htmlFor="gender">
-                Gender:
-              </label>
-              <br />
-              <input
-                className="field"
-                type="text"
-                id="gender"
-                name="gender"
-                value={tabs.find((tab) => tab.id === activeTab)?.content.gender || ""}
-                onChange={(e) =>
-                  updateTabContent(activeTab, "gender", e.target.value)
-                }
-              />
-            </div> */}
+           
             <div className="ins2-col">
               <label className="label" htmlFor="gender">
                 Gender:
@@ -197,25 +182,6 @@ const DynamicTabs = () => {
               </select>
             </div>
 
-            {/* <div className="ins2-col">
-              <label className="label" htmlFor="maritalStatus">
-                Marital Status:
-              </label>
-              <br />
-              <input
-                className="field"
-                type="text"
-                id="maritalStatus"
-                name="maritalStatus"
-                value={
-                  tabs.find((tab) => tab.id === activeTab)?.content.maritalStatus ||
-                  ""
-                }
-                onChange={(e) =>
-                  updateTabContent(activeTab, "maritalStatus", e.target.value)
-                }
-              />
-            </div> */}
             <div className="ins2-col">
               <label className="label" htmlFor="maritalStatus">
                 Marital Status:
@@ -260,4 +226,4 @@ const DynamicTabs = () => {
   );
 };
 
-export default DynamicTabs;
+export default DriverTab;

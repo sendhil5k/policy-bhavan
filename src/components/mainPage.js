@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import SubmitButton from './SubmitButton';
 import Accordion from "./accordion";
 import { NAME_AND_ADDRESS } from '../constants';
@@ -12,7 +12,7 @@ const MainPage = () => {
   };
   return (
     <>
-    <Accordion title="Link">
+    <Accordion title="Link" isOpenDefault>
     <div>
         <div className="ins2-col">
         <a href="#">New Account</a>
@@ -151,11 +151,6 @@ const MainPage = () => {
         </form>
       </div>
       </Accordion>
-      
-      <Accordion title="Accordion Title 3">
-        <p>This is the content for accordion 3.</p>
-      </Accordion>
-
       
   </>
   )

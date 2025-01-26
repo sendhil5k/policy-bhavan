@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './mainPage';
 import Notfound from './notFound';

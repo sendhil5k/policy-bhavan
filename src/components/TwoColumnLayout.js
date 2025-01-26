@@ -1,4 +1,3 @@
-import React from "react";
 import "./TwoColumnLayout.css"; // Import the CSS file
 import MainLayout from "./MainLayout";
 const TwoColumnLayout = () => {

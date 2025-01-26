@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Reusable SubmitButton component
 const SubmitButton = ({ text, onClick, disabled = false, className = '', style = {} }) => {
   return (
