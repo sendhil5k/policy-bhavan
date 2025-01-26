@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './accordion.css';
 const Accordion = ({ title, children, isOpenDefault = false }) => {
   const [isOpen, setIsOpen] = useState(isOpenDefault);

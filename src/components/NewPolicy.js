@@ -1,7 +1,7 @@
-import React from 'react';
 import SubmitButton from './SubmitButton';
 import Accordion from "./accordion";
-import TabContent from './TabContent';
+import DriverTab from './DriverTab';
+import VehicleTab from './VehicleTab';
 import "./Header.css"; // Import the CSS file
 
 const NewPolicy = () => {
@@ -12,7 +12,7 @@ const NewPolicy = () => {
     };
   return (
     <>
-    <Accordion title="Policy Holder Details">
+    <Accordion title="Policy Holder Details" isOpenDefault>
     <div>
       <div className="ins2-col">
         <label className="label" htmlFor="fname">
@@ -83,7 +83,7 @@ const NewPolicy = () => {
     </div>
     </Accordion>
     
-    <Accordion title="Current Insurance">
+    <Accordion title="Current Insurance" isOpenDefault>
     <div>
       <div className="ins1-col">
         <label className="label" htmlFor="fname">
@@ -113,8 +113,12 @@ const NewPolicy = () => {
     </div>
     </Accordion>
 
-    <Accordion title="Drivers">
-        <div><TabContent></TabContent></div>
+    <Accordion title="Drivers" isOpenDefault>
+        <div><DriverTab></DriverTab></div>
+    </Accordion>
+
+    <Accordion title="Vehicles" isOpenDefault>
+        <div><VehicleTab></VehicleTab></div>
     </Accordion>
 </>
   )
