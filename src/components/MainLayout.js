@@ -3,7 +3,8 @@ import Home from './mainPage';
 import Notfound from './notFound';
 import About from "./aboutus";
 import Contact from "./contactus";
-import NewPolicy from './NewPolicy'
+import NewPolicy from './NewPolicy';
+import TransactionTable from './TransactionTable';
 
 export const withRouter = (Component) => {
   const Wrapper = (props) => {
@@ -19,6 +20,7 @@ function MainLayout() {
       <Route path="/about" caseSensitive={false} element={<About />} />
       <Route path="/contact" caseSensitive={false} element={<Contact />} />
       <Route path="/newpolicy" caseSensitive={false} element={<NewPolicy />} />
+      <Route path="/transactiontable" caseSensitive={false} element={<TransactionTable />} />
       <Route path="*" element={<Notfound />} />
     </Routes>
   )

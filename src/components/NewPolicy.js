@@ -77,9 +77,9 @@ const NewPolicy = () => {
         <br />
         <input className="field" type="text" id="fname" name="fname" />
       </div>
-      <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
+      {/* <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
         <SubmitButton text="Submit" onClick={handleSubmit} />
-      </form>
+      </form> */}
     </div>
     </Accordion>
     
@@ -107,9 +107,9 @@ const NewPolicy = () => {
         <input className="field" type="text" id="fname" name="fname" />
       </div>
       
-      <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
+      {/* <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
         <SubmitButton text="Submit" onClick={handleSubmit} />
-      </form>
+      </form> */}
     </div>
     </Accordion>
 
@@ -120,6 +120,10 @@ const NewPolicy = () => {
     <Accordion title="Vehicles" isOpenDefault>
         <div><VehicleTab></VehicleTab></div>
     </Accordion>
+
+    <form className="btnpanel" onSubmit={(e) => e.preventDefault()}>
+        <SubmitButton text="Submit" onClick={handleSubmit} />
+      </form>
 </>
   )
 }

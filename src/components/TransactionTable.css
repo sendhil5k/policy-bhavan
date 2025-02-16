@@ -1,0 +1,31 @@
+.font-size{font-size: 10px; color:chartreuse;}
+/* table css */
+.table-container {
+    
+    overflow-x: auto;
+    margin: 10px 0;
+  }
+  
+  .transactions-table {
+    
+    border-collapse: collapse;
+  }
+  
+  .transactions-table th, .transactions-table td {
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+    text-align: left;
+  }
+  
+  .transactions-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+  }
+  
+  .transactions-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .transactions-table tr:hover {
+    background-color: #f1f1f1;
+  }

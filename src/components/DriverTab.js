@@ -206,7 +206,7 @@ const DriverTab = () => {
               </select>
             </div>
 
-            <form
+            {/* <form
               className="btnpanel"
               onSubmit={(e) => {
                 e.preventDefault();
@@ -216,7 +216,7 @@ const DriverTab = () => {
               <button type="submit" className="submit-btn">
                 Submit
               </button>
-            </form>
+            </form> */}
           </div>
         ) : (
           <p>No Driver tab available. Add a new Driver tab!</p>
