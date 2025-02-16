@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+  }
+  input:focus-visible {
+    outline: gray auto 1px;
+}
+  a:link{
+    color:#06a; 
+    text-decoration: none;
+  }
+  a:hover{
+    color:#06a;
+    text-decoration: underline;
+  }
+  h1,h2,h3,h4,h5,h6,p{
+    margin:5px 0;
+    padding:0;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .wrapper{display: flex;margin:10px;}
+  .column {
+    width: 20%;
+    padding: 10px;
+    color:#696b70; 
+  }
+  .dblock, .dblock li{display: block;}
+  .dblock a:link{font-size: 14px;}
+  .dblock a:hover{text-decoration: underline;}
+  .column1 {
+    width: 100%;
+  }
+  .ins1-col{
+    width:70%; 
+    display:block;
+  }
+  .ins2-col{
+    width:50%; 
+    display: inline-block;
+    vertical-align: top;
+  }
+  .ins3-col{
+    width:33%; 
+    display: inline-block;
+    vertical-align: top;
+  }
+  .mid-container{
+    margin-bottom: 5%;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .section{
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    overflow: hidden;
+    padding:15px;
+    margin-bottom:20px;
+}
+.section-title{
+    border-bottom: 1px solid #dadce0;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+.section-title div:nth-child(1) {
+  width: 97%;
+}
+.section-title:hover{
+color:#06A}
+.label{
+    font-size: 14px;
+   
+}
+.field{
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius:3px;
+    border: 1px solid #9fa0a4;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    padding: 4px 4px 4px 8px;
+    margin:5px 0;
+    width:95%;
+    }
+    
+  .card-link .ins-col{
+    margin:5px 0;
+  }
+  .card-link .ins-col a:link{
+    color:#06a;
+    text-decoration: none;
+  }
+  .card-link .ins-col a:hover{
+    text-decoration: underline;
+  } 
+  .arrow {
+    border: solid #06a;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+      }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+.btnpanel{
+  text-align: center;
+    margin-right: 4%;
+    margin-top: 20px;
+}
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px){
+    .wrapper{
+      display: block;
+    }
+    .column, .column1 {
+      width: 100%;
+    }
+    .ins-col, .ins1-col, .ins2-col,.field, .ins3-col{
+        width:100%; 
+      }
+      .mid-container{
+        margin-bottom: 20%;
+      }
+  }
