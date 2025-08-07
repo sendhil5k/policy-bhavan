@@ -1,5 +1,14 @@
+import { FC } from "react";
+
 // Reusable SubmitButton component
-const SubmitButton = ({ text, onClick, disabled = false, className = '', style = {} }) => {
+type submitbtnProps = {
+  text:string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?:boolean;
+  className?:string;
+  style?:React.CSSProperties
+}
+const SubmitButton:FC<submitbtnProps> = ({ text, onClick, disabled = false, className = '', style = {} }) => {
   return (
     <button
       type="submit"

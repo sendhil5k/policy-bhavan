@@ -1,11 +1,25 @@
 import { useState } from "react";
 import './DriverTab.css';
 
+type VehicleContent = {
+  year?: string;
+  make?: string;
+  model?: string;
+  primaryuse?: string;
+  vehicletype?: string;
+};
+
+type VehicleTabType = {
+  id: number;
+  title: string;
+  content: VehicleContent;
+};
+
 const VehicleTab = () => {
-  const [tabs, setTabs] = useState([
+  const [tabs, setTabs] = useState<VehicleTabType[]>([
     { id: 1, title: "Vehicle 1", content: {} },
   ]);
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   // Add a new tab
   const addTab = () => {
@@ -18,17 +32,22 @@ const VehicleTab = () => {
   };
 
   // Remove a tab
-  const removeTab = (id) => {
+  const removeTab = (id: number) => {
     setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== id));
     // If the removed tab is active, switch to the first remaining tab
     if (activeTab === id && tabs.length > 1) {
       const firstTab = tabs.find((tab) => tab.id !== id);
-      setActiveTab(firstTab ? firstTab.id : null);
+      if (firstTab) {
+        setActiveTab(firstTab.id);
+      } else if (tabs.length > 1) {
+        setActiveTab(tabs[0].id);
+      }
+      // If no tabs remain, do not update activeTab (or handle as needed)
     }
   };
 
   // Update content of the active tab
-  const updateTabContent = (id, field, value) => {
+  const updateTabContent = (id: number, field: string, value: any) => {
     setTabs((prevTabs) =>
       prevTabs.map((tab) =>
         tab.id === id

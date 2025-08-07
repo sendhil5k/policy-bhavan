@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import SubmitButton from './SubmitButton';
 import Accordion from "./accordion";
-import { NAME_AND_ADDRESS } from '../constants';
+import { NAME_AND_ADDRESS } from '../constants'
 import { Link } from 'react-router-dom';
 import "./Header.css"; // Import the CSS file
 

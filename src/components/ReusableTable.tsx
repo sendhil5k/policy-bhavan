@@ -1,9 +1,22 @@
-import React, { useEffect, useState, useMemo } from 'react';
-
-const ReusableTable = ({ columns, dataUrl, limit = 10 }) => {
+import React, { FC, useEffect, useState, useMemo } from 'react';
+type reuseProps = {
+  columns: string[];
+  dataUrl: any;
+  limit: number;
+}
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+interface SortConfig {
+    key: string | null;
+    direction: 'ascending' | 'descending';
+  }
+const ReusableTable:FC<reuseProps> = ({ columns, dataUrl, limit = 10 }) => {
   const [data, setData] = useState([]);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
-  const [error, setError] = useState(null); 
+  const [sortConfig, setSortConfig] = useState<{ key: string | null; direction: 'ascending' | 'descending' }>({ key: null, direction: 'ascending' });
+  const [error, setError] = useState<Error | null>(null); 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,7 +27,7 @@ const ReusableTable = ({ columns, dataUrl, limit = 10 }) => {
         const jsonData = await response.json();
         setData(jsonData.slice(0, limit)); // Limit the records based on the limit parameter
       } catch (error) {
-        setError(error)
+        setError(error as Error)
         console.log('Error ', error);
         console.error('Error fetching data:', error);
       }
@@ -26,10 +39,11 @@ const ReusableTable = ({ columns, dataUrl, limit = 10 }) => {
   const sortedData = useMemo(() => {
     if (sortConfig.key) {
       return [...data].sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
+        const key = sortConfig.key as string;
+        if (a[key] < b[key]) {
           return sortConfig.direction === 'ascending' ? -1 : 1;
         }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
+        if (a[key] > b[key]) {
           return sortConfig.direction === 'ascending' ? 1 : -1;
         }
         return 0;
@@ -38,15 +52,17 @@ const ReusableTable = ({ columns, dataUrl, limit = 10 }) => {
     return data;
   }, [data, sortConfig]);
 
-  const requestSort = key => {
-    let direction = 'ascending';
+  
+
+  const requestSort = (key: string) => {
+    let direction: 'ascending' | 'descending' = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
       direction = 'descending';
     }
     setSortConfig({ key, direction });
   };
 
-  const getClassNamesFor = name => {
+  const getClassNamesFor = (name: string) => {
     if (!sortConfig.key) {
       return;
     }

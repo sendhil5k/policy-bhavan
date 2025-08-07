@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import './DriverTab.css';
+type DriverContent = {
+  fname?: string;
+  lname?: string;
+  licenseNumber?: string;
+  licenseState?: string;
+  dob?: string;
+  gender?: string;
+  maritalStatus?: string;
+};
+
+type tabProps = {
+  id: number;
+  title: string;
+  content: DriverContent;
+};
 
 const DriverTab = () => {
-  const [tabs, setTabs] = useState([
+  const [tabs, setTabs] = useState<tabProps[]>([
     { id: 1, title: "Driver 1", content: {} },
   ]);
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   // Add a new tab
   const addTab = () => {
@@ -18,17 +33,17 @@ const DriverTab = () => {
   };
 
   // Remove a tab
-  const removeTab = (id) => {
+  const removeTab = (id: number) => {
     setTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== id));
     // If the removed tab is active, switch to the first remaining tab
-    if (activeTab === id && tabs.length > 1) {
-      const firstTab = tabs.find((tab) => tab.id !== id);
-      setActiveTab(firstTab ? firstTab.id : null);
+    if (activeTab === id) {
+      const remainingTabs = tabs.filter((tab) => tab.id !== id);
+      setActiveTab(remainingTabs.length > 0 ? remainingTabs[0].id : 1);
     }
   };
 
   // Update content of the active tab
-  const updateTabContent = (id, field, value) => {
+  const updateTabContent = (id: number, field: string, value: any) => {
     setTabs((prevTabs) =>
       prevTabs.map((tab) =>
         tab.id === id

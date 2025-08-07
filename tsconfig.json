@@ -1,0 +1,14 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "jsx": "react-jsx", // or "react" for older versions
+    "module": "ESNext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}

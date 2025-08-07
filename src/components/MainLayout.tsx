@@ -5,18 +5,26 @@ import About from "./aboutus";
 import Contact from "./contactus";
 import NewPolicy from './NewPolicy';
 import TransactionTable from './TransactionTable';
+import React from 'react';
 
-export const withRouter = (Component) => {
-  const Wrapper = (props) => {
-      const history = useNavigate();
-      return <Component history={history} {...props} />
-  }
-  return Wrapper;
+interface WithRouterProps {
+  history: ReturnType<typeof useNavigate>;
+  [key: string]: any;
 }
+
+type ComponentType<P = {}> = React.ComponentType<P>;
+
+export const withRouter = <P extends object>(Component: ComponentType<P & WithRouterProps>) => {
+  const Wrapper: React.FC<Omit<P, keyof WithRouterProps>> = (props) => {
+    const history = useNavigate();
+    return <Component history={history} {...(props as P)} />;
+  };
+  return Wrapper;
+};
 function MainLayout() {
   return (
     <Routes>
-      <Route exact path="/" caseSensitive={false} element={<Home />} />
+      <Route path="/" caseSensitive={false} element={<Home />} />
       <Route path="/about" caseSensitive={false} element={<About />} />
       <Route path="/contact" caseSensitive={false} element={<Contact />} />
       <Route path="/newpolicy" caseSensitive={false} element={<NewPolicy />} />

@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import './accordion.css';
-const Accordion = ({ title, children, isOpenDefault = false }) => {
-  const [isOpen, setIsOpen] = useState(isOpenDefault);
+type accordionProps = {
+  title: string;
+  children: React.ReactNode;
+  isOpenDefault?: boolean;
+}
+const Accordion:FC<accordionProps> = ({ title, children, isOpenDefault = false } ) => {
+  const [isOpen, setIsOpen] = useState<boolean>(isOpenDefault);
 
-  const toggleAccordion = () => {
+  const toggleAccordion = (event: React.MouseEvent<HTMLDivElement>) => {
     setIsOpen((prev) => !prev);
   };
 
